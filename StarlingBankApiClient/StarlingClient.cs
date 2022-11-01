@@ -11,13 +11,13 @@ public class StarlingClient : BaseClient
 
     public StarlingAccountList GetAccounts()
     {
-        return GetJsonForEndpoint<StarlingAccountList>("api/v2/accounts");
+        return GetJsonForEndpoint<StarlingAccountList>("accounts");
     }
 
     public StarlingAccountBalanceList GetBalances()
     {
         var accountUid = GetAccounts().Accounts.First().Uuid;
-        return GetJsonForEndpoint<StarlingAccountBalanceList>($"api/v2/accounts/{accountUid}/balance");
+        return GetJsonForEndpoint<StarlingAccountBalanceList>($"accounts/{accountUid}/balance");
     }
 
     public StarlingTransactionFeedItemCollection GetFeedItems(DateTime since)
@@ -26,8 +26,8 @@ public class StarlingClient : BaseClient
         var accountUid = account.Uuid;
         var categoryUid = account.DefaultCategory;
         
-        Console.WriteLine($"api/v2/feed/account/{accountUid}/category/{categoryUid}?changesSince=" + since.ToString("yyyy-MM-ddTHH:mm:ssZ"));
+        Console.WriteLine($"feed/account/{accountUid}/category/{categoryUid}?changesSince=" + since.ToString("yyyy-MM-ddTHH:mm:ssZ"));
         
-        return GetJsonForEndpoint<StarlingTransactionFeedItemCollection>($"api/v2/feed/account/{accountUid}/category/{categoryUid}?changesSince=" + since.ToString("yyyy-MM-ddTHH:mm:ssZ"));
+        return GetJsonForEndpoint<StarlingTransactionFeedItemCollection>($"feed/account/{accountUid}/category/{categoryUid}?changesSince=" + since.ToString("yyyy-MM-ddTHH:mm:ssZ"));
     }
 }

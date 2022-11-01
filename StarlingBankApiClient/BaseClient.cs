@@ -7,9 +7,9 @@ public class BaseClient
 {
     private readonly RestClient _client;
 
-    protected BaseClient(string accessCode)
+    protected BaseClient(string accessCode, int version = 2)
     {
-        _client = new RestClient("https://api.starlingbank.com");
+        _client = new RestClient($"https://api.starlingbank.com/api/v{version}");
         _client.AddDefaultHeader("Authorization", $"Bearer {accessCode}");
     }
 
