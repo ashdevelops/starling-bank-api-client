@@ -1,7 +1,7 @@
 using Newtonsoft.Json;
 using RestSharp;
 
-namespace ConsoleApp5;
+namespace StarlingBankApiClient;
 
 public class BaseClient
 {

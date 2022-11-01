@@ -1,4 +1,7 @@
-namespace ConsoleApp5;
+using StarlingBankApiClient.Accounts;
+using StarlingBankApiClient.Accounts.Balance;
+
+namespace StarlingBankApiClient;
 
 public class StarlingClient : BaseClient
 {

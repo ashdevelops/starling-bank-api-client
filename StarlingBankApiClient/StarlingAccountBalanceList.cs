@@ -1,6 +1,6 @@
 using Newtonsoft.Json;
 
-namespace ConsoleApp5;
+namespace StarlingBankApiClient;
 
 public class StarlingTransactionFeedItemCollection
 {
