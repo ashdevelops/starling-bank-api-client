@@ -15,5 +15,5 @@ Get an accounts transactions for the last 30 days
 
 ```c#
 var client = new StarlingClient("personal access token");
-var items = client.GetFeedItems(DateTime.Now.Subtract(TimeSpan.FromDays(40)));
+var items = client.GetFeedItems(DateTime.Now.Subtract(TimeSpan.FromDays(30)));
 ```
